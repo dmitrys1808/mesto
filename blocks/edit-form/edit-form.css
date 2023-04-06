@@ -1,10 +1,10 @@
-.edit__form {
+.edit-form {
     display: flex;
     flex-direction: column;
     padding: 0 36px;
 }
 @media screen and (max-width: 1279px) {
-    .edit__form {
+    .edit-form {
             padding-left: 22px;
             padding-right: 22px;
         }
