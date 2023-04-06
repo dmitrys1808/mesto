@@ -1,0 +1,5 @@
+.card__img-container {
+    padding-top: 100%;
+    position: relative;
+    overflow: hidden;
+}

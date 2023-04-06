@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Mesto</title>
+</head>
+<body class="page">
+  <section class="page__container">
+    <header class="header">
+      <img src="./images/Vector.svg" alt="лого страницы" class="header__logo">
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div class="main-info">
+        <img src="./images/image.png" class="profile__avatar">
+        <div class="profile__info">
+          <div class="profile__main-info">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <p class="profile__description">Исследователь океана</p>
+          </div>
+          <button class="profile__edit-button" type="button"><img src="./images/Vector (1).svg" alt="кнопка карандаша" class="edit-button__image"></button>
+        </div>
+        </div>
+        <button class="profile__add-button" type="button"><img src="./images/Vector (2).svg" alt="кнопка крестика" class="add-button__image"></button>
+      </section>
+      <section class="grid">
+        <div class="card">
+          <div class="card__img-container">
+            <img src="./images/aurelien-romain-w15cKfn6mng-unsplash.jpg" alt="ростов" class="card__img"></div>
+            <div class="card__description">
+              <p class="card__text">Ростов Великий</p>
+              <button class="card__button" type="button"><img src="./images/Vector (3).svg" alt="сердечко" class="card__heart"></button>
+            </div>
+        </div>
+        <div class="card">
+          <div class="card__img-container"><img src="./images/graphic-node-yPSbirjJWzs-unsplash.jpg" alt="мадагаскар" class="card__img"></div>
+          <div class="card__description">
+          <p class="card__text">Мадакаскар</p>
+          <button class="card__button" type="button"><img src="./images/Vector (3).svg" alt="сердечко" class="card__heart"></button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img-container"><img src="./images/howling-red-zATDM3xbOBI-unsplash.jpg" alt="эверест" class="card__img"></div>
+          <div class="card__description">
+          <p class="card__text">Эверест</p>
+          <button class="card__button" type="button"><img src="./images/Vector (3).svg" alt="сердечко" class="card__heart"></button>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card__img-container"><img src="./images/jezael-melgoza-layMbSJ3YOE-unsplash.jpg" alt="токио" class="card__img"></div>
+          <div class="card__description">
+          <p class="card__text">Токио</p>
+          <button class="card__button" type="button"><img src="./images/Vector (3).svg" alt="сердечко" class="card__heart"></button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img-container"><img src="./images/luca-bravo-TaCk3NspYe0-unsplash.jpg" alt="нью-йорк" class="card__img"></div>
+          <div class="card__description">
+          <p class="card__text">Нью-Йорк</p>
+          <button class="card__button" type="button"><img src="./images/Vector (3).svg" alt="сердечко" class="card__heart"></button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img-container"><img src="./images/nikita-karimov-lvJZhHOIJJ4-unsplash.jpg" alt="москва" class="card__img"></div>
+          <div class="card__description">
+          <p class="card__text">Москва</p>
+          <button class="card__button" type="button"><img src="./images/Vector (3).svg" alt="сердечко" class="card__heart"></button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&#169;2020 Mesto Russia</p>
+    </footer>
+  </section>
+  <div class="popup">
+    <div class="popup__container">
+      <h2 class="popup__heading">Редактировать профиль</h2>
+      <button class="popup__icon" type="button"><img src="./images/Close Icon.png" class="popup__img" alt="кнопка закрыть"></button>
+      <form class="edit__form">
+        <fieldset class='edit__form-container'>
+          <input type="text" class="form__item" id="name" name="name" value="Жак-Ив Кусто">
+          <input type="text" class="form__item" id="description" name="description" value="Исследователь океана">
+        </fieldset>
+        <button type="submit" class="popup__button">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <script src="./scripts/index.js"></script>
+</body>
+</html>
