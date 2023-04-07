@@ -10,13 +10,13 @@
     justify-content: center;
     align-items: center;
     transition: opacity 1s ease-in-out;
+    cursor: pointer;
 }
 .popup__icon:hover {
     opacity: 0.6;
 }
 @media screen and (max-width: 1279px) {
     .popup__icon {
-            position: absolute;
             top: -36px;
             right: 0;
             width: 20px;

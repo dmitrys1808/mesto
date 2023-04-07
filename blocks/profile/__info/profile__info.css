@@ -3,10 +3,12 @@
     align-self: center;
     gap: 18px;
     align-items: first baseline;
+    max-width: 100%;
 }
 @media screen and (max-width: 1279px) {
     .profile__info {
             gap: 10px;
+            justify-content: center;
             padding-left: 25px;
         }
 }
