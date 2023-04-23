@@ -1,0 +1,6 @@
+.card__button_active {
+    opacity: 1;
+    background: url(../../../../images/Union.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
