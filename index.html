@@ -41,10 +41,12 @@
          <h2 class="popup__heading">Редактировать профиль</h2>
          <button class="popup__icon popup__close-edit" type="button"><img src="./images/CloseIcon.png" class="popup__img"
                alt="кнопка закрыть"></button>
-         <form class="edit-form edit-form_profile_submit" name="edit-form" method="post">
+         <form class="edit-form edit-form_profile_submit" name="edit-form" method="post" novalidate>
             <fieldset class='edit-form__container'>
-               <input type="text" class="edit-form__item" id="name" name="name" placeholder="Имя">
-               <input type="text" class="edit-form__item" id="description" name="description" placeholder="О себе">
+               <input type="text" class="edit-form__item" id="name" name="name" placeholder="Имя" required minlength="2" maxlength="40">
+               <span class="edit-form__item-error name-error"></span>
+               <input type="text" class="edit-form__item" id="description" name="description" placeholder="О себе" required minlength="2" maxlength="200">
+               <span class="edit-form__item-error description-error"></span>
             </fieldset>
             <button type="submit" class="popup__button">Сохранить</button>
          </form>
@@ -55,10 +57,12 @@
          <h2 class="popup__heading">Новое место</h2>
          <button class="popup__icon popup__close-card" type="button"><img src="./images/CloseIcon.png" class="popup__img"
                alt="кнопка закрыть"></button>
-         <form class="edit-form edit-form_card_submit" name="add-form" method="post">
+         <form class="edit-form edit-form_card_submit" name="add-form" method="post" novalidate>
             <fieldset class='edit-form__container'>
-               <input type="text" class="edit-form__item" id="image-name" name="image-name" placeholder="Название">
-               <input type="text" class="edit-form__item" id="image-link" name="image-link" placeholder="Ссылка на картинку">
+               <input type="text" class="edit-form__item" id="image-name" name="image-name" placeholder="Название" required minlength="2" maxlength="30">
+               <span class="edit-form__item-error image-name-error"></span>
+               <input type="url" class="edit-form__item" id="image-link" name="image-link" placeholder="Ссылка на картинку" required>
+               <span class="edit-form__item-error image-link-error"></span>
             </fieldset>
             <button type="submit" class="popup__button">Создать</button>
          </form>
@@ -84,6 +88,7 @@
       </div>
    </template>
    <script src="./scripts/index.js"></script>
+   <script src="./scripts//validation.js"></script>
 </body>
 
 </html>

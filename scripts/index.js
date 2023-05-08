@@ -118,3 +118,20 @@ function addFormSubmit (evt) {
 closePopup(addPopup)
 } 
 formElementAdding.addEventListener('submit', addFormSubmit);
+// closing pop with escape
+window.addEventListener('keydown', function (evt) {
+  if (evt.key === 'Escape') {
+    closePopup(addPopup);
+    closePopup(editPopup);
+    closePopup(imagePopup);
+  }
+});
+// closing pop with overlay
+function closeWithOverlay (evt) {
+  if (evt.target.classList.contains('popup_opened')){
+    closePopup(evt.target);
+  }
+}
+addPopup.addEventListener('mousedown', closeWithOverlay);
+imagePopup.addEventListener('mousedown', closeWithOverlay);
+editPopup.addEventListener('mousedown', closeWithOverlay);
