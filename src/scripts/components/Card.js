@@ -1,9 +1,9 @@
 class Card {
-    constructor(name, link, templateSelector, fullScreenImage) {
-        this._name = name;
-        this._link = link;
+    constructor(title, image, templateSelector, handleCardClick) {
+        this._name = title;
+        this._link = image;
         this._templateSelector = templateSelector;
-        this._fullScreenImage = fullScreenImage;
+        this._handleCardClick = handleCardClick;
     }
     _getTemplate() {
         const newCard = document.querySelector(this._templateSelector).content.cloneNode(true);
@@ -16,7 +16,7 @@ class Card {
         this._closestCard.remove();
     }
     _setEventListeners() {
-        this._cardImage.addEventListener('click', () => this._fullScreenImage(this._name, this._link));
+        this._cardImage.addEventListener('click', () => this._handleCardClick(this._name, this._link));
         this._cardDeleteBtn.addEventListener('click', () => this._deleteCard());
         this._heartBtn.addEventListener('click', () => this._likeCard());
     }
