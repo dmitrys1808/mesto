@@ -27,8 +27,6 @@ class Card {
         this._heartBtn = this._element.querySelector('.card__heart');
         this._cardDeleteBtn = this._element.querySelector('.card-trash');
         this._closestCard = this._cardDeleteBtn.closest('.card');
-        this._element.querySelector('.card__img').style.backgroundImage = `url(${this._link})`;
-        this._element.querySelector('.card__text').textContent = this._name;
         this._cardImage.src = this._link;
         this._cardImage.alt = this._name;
         this._cardText.textContent = this._name;
