@@ -1,41 +1,18 @@
-const initialCards = [
-  {
-    title: 'Архыз',
-    image: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    title: 'Челябинская область',
-    image: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    title: 'Иваново',
-    image: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    title: 'Камчатка',
-    image: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    title: 'Холмогорский район',
-    image: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    title: 'Байкал',
-    image: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
 const buttonEdit = document.querySelector('.profile__edit-button');
 const buttonAdd = document.querySelector('.profile__add-button');
+const avatarEdit = document.querySelector('.profile__avatar-cover')
 
 const imagePopup = '.popup_type_fullscreen';
 const containerSeletor = '.grid';
 const editPopup = '.popup_type_edit';
 const addPopup = '.popup_type_card';
+const editAvatar = '.popup_type_update';
+const surenessWithPopup = '.popup_type_sureness'
 
 const profileConfig = {
   profileName: '.profile__name',
   profileDescription: '.profile__description',
+  profileAvatar: '.profile__avatar',
 }
 
 const validationConfig = {
@@ -51,13 +28,15 @@ const formElementEditing = document.querySelector('.edit-form_profile_submit');
 const formElementAdding = document.querySelector('.edit-form_card_submit');
 
 export{
-  initialCards,
   buttonEdit,
   buttonAdd,
+  avatarEdit,
   imagePopup,
   containerSeletor,
   editPopup,
   addPopup,
+  editAvatar,
+  surenessWithPopup,
   profileConfig,
   validationConfig,
   formElementEditing,

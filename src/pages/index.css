@@ -43,3 +43,5 @@
 @import url(../blocks/edit-form/__item/edit-form__item-error.css);
 @import url(../blocks/edit-form/__item/_visible/edit-form__item-error_visible.css);
 @import url(../blocks/edit-form/__item/_error/edit-form__item_type_error.css);
+@import url(../blocks/profile/__avatar-cover/profile__avatar-cover.css);
+@import url(../blocks/profile/__avatar-pencil/profile__avatar-pencil.css);
