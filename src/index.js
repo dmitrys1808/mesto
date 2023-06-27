@@ -21,6 +21,8 @@ import {
   validationConfig,
   formElementEditing,
   formElementAdding,
+  formElementAvatar,
+  userId,
 } from './utils/constants.js'
 // API
 const api = new Api({
@@ -31,15 +33,7 @@ const api = new Api({
   }
 });
 
-//initial cards
 
-Promise.all([api.getInfo(), api.getInitialCards()])
-  .then(([userData, cardData]) => {
-    cardData.forEach(element => element.myid = userData._id);
-    userInfo.setUserInfo({ username: userData.name, about: userData.about, avatar: userData.avatar });
-    section.addCards(cardData.reverse());
-  })
-  .catch((error => console.error(`Ошибка при начальной загрузке ${error}`)))
 
 // sureness popup 
 
@@ -90,10 +84,10 @@ const popupEdit = new PopupWithForm(editPopup, (data) => {
   api.setUserInfo(data)
     .then(res => {
       userInfo.setUserInfo({ username: res.name, about: res.about, avatar: res.avatar })
+      popupEdit.close();
     })
     .catch((error => console.error(`Ошибка при редактировании ${error}`)))
     .finally(() => popupEdit.defText())
-  popupEdit.close();
 });
 
 buttonEdit.addEventListener('click', () => {
@@ -107,24 +101,23 @@ const popupAvatar = new PopupWithForm(editAvatar, (data) => {
   api.setAvatar(data)
     .then(res => {
       userInfo.setUserInfo({ username: res.name, about: res.about, avatar: res.avatar })
+      popupAvatar.close();
     })
     .catch((error => console.error(`Ошибка при обновлении аватара ${error}`)))
     .finally(() => popupAvatar.defText())
-  popupAvatar.close();
 });
-
 
 avatarEdit.addEventListener('click', () => {
   popupAvatar.open();
-  newAddCardFormValidation.clearInputErrors();
+  newProfileAvatarFormValidation.clearInputErrors();
 });
 
-
 //  add card popup
+
 const popupAdd = new PopupWithForm(addPopup, (data) => {
-  Promise.all([api.getInfo(), api.addCard(data)])
-    .then(([userData, cardData]) => {
-      cardData.myid = userData._id;
+  api.addCard(data)
+    .then((cardData) => {
+      cardData.myid = userId.id;
       section.addItem(createCard(cardData));
       popupAdd.close();
     })
@@ -149,7 +142,19 @@ surenessPopup.setEventListeners();
 // validation
 const newProfileFormValidation = new FormValidator(validationConfig, formElementEditing);
 const newAddCardFormValidation = new FormValidator(validationConfig, formElementAdding);
+const newProfileAvatarFormValidation = new FormValidator(validationConfig, formElementAvatar)
 
 newProfileFormValidation.enableValidation();
 newAddCardFormValidation.enableValidation();
+newProfileAvatarFormValidation.enableValidation();
 
+//initial cards
+
+Promise.all([api.getInfo(), api.getInitialCards()])
+  .then(([userData, cardData]) => {
+    cardData.forEach(element => element.myid = userData._id);
+    userInfo.setUserInfo({ username: userData.name, about: userData.about, avatar: userData.avatar });
+    section.addCards(cardData.reverse());
+    userId.id = userData._id;
+  })
+  .catch((error => console.error(`Ошибка при начальной загрузке ${error}`)))

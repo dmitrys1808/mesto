@@ -1,6 +1,6 @@
 const buttonEdit = document.querySelector('.profile__edit-button');
 const buttonAdd = document.querySelector('.profile__add-button');
-const avatarEdit = document.querySelector('.profile__avatar-cover')
+const avatarEdit = document.querySelector('.profile__avatar-cover');
 
 const imagePopup = '.popup_type_fullscreen';
 const containerSeletor = '.grid';
@@ -26,7 +26,8 @@ const validationConfig = {
 
 const formElementEditing = document.querySelector('.edit-form_profile_submit');
 const formElementAdding = document.querySelector('.edit-form_card_submit');
-
+const formElementAvatar = document.querySelector('.edit-form_avatar_submit')
+let userId = {};
 export{
   buttonEdit,
   buttonAdd,
@@ -41,4 +42,6 @@ export{
   validationConfig,
   formElementEditing,
   formElementAdding,
+  formElementAvatar,
+  userId
 }

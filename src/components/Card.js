@@ -42,7 +42,8 @@ class Card {
         this._heartBtn.addEventListener('click', () => this._likeCard());
     }
     _checkTrash() {
-        this._myId === this._ownerId ? this._cardDeleteBtn.style.display = 'block' : this._cardDeleteBtn.style.display = 'none';
+        if (this._myId !== this._ownerId){
+         this._cardDeleteBtn.remove()}
     }
     _checkLikes() {
         this._likes.forEach(element => {

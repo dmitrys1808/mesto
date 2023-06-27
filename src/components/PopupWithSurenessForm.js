@@ -21,7 +21,6 @@ export default class PopupWithSurenessForm extends Popup {
             evt.preventDefault();
             this._submitBtn.textContent = `${this._submitBtn.textContent}...`
             this._handleFunction({ card: this._element, cardId: this._cardId });
-            this.close();
         })
     }
 }

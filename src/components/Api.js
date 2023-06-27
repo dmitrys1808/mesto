@@ -4,6 +4,9 @@ export default class Api {
         this._headers = options.headers;
         this._authorization = options.headers.authorization;
     }
+    _checkResponse(res){
+        return res.ok ? res.json() : Promise.reject
+    }
     getInfo() {
         return fetch(`${this._url}/users/me`,
             {
@@ -11,7 +14,7 @@ export default class Api {
                     authorization: this._authorization
                 }
             })
-            .then(res => res.ok ? res.json() : Promise.reject)
+            .then(this._checkResponse)
     }
     getInitialCards() {
         return fetch(`${this._url}/cards`, {
@@ -19,7 +22,7 @@ export default class Api {
                 authorization: this._authorization
             }
         })
-            .then(res => res.ok ? res.json() : Promise.reject)
+            .then(this._checkResponse)
     }
     setUserInfo(data) {
         return fetch(`${this._url}/users/me`, {
@@ -30,7 +33,7 @@ export default class Api {
                 about: data.about,
             })
         })
-            .then(res => res.ok ? res.json() : Promise.reject)
+            .then(this._checkResponse)
     }
     addCard(data) {
         return fetch(`${this._url}/cards`, {
@@ -41,7 +44,7 @@ export default class Api {
                 link: data.image,
             })
         })
-            .then(res => res.ok ? res.json() : Promise.reject)
+            .then(this._checkResponse)
     }
     addLike(cardId) {
         return fetch(`${this._url}/cards/${cardId}/likes`, {
@@ -50,7 +53,7 @@ export default class Api {
                 authorization: this._authorization
             }
         })
-            .then(res => res.ok ? res.json() : Promise.reject)
+            .then(this._checkResponse)
     }
     deleteLike(cardId) {
         return fetch(`${this._url}/cards/${cardId}/likes`, {
@@ -59,7 +62,7 @@ export default class Api {
                 authorization: this._authorization
             }
         })
-            .then(res => res.ok ? res.json() : Promise.reject)
+            .then(this._checkResponse)
     }
     deleteCard(cardId) {
         return fetch(`${this._url}/cards/${cardId}`, {
@@ -68,7 +71,7 @@ export default class Api {
                 authorization: this._authorization
             }
         })
-            .then(res => res.ok ? res.json() : Promise.reject)
+            .then(this._checkResponse)
     }
     setAvatar(data) {
         return fetch(`${this._url}/users/me/avatar`, {
@@ -78,7 +81,7 @@ export default class Api {
                 avatar: data.avatar,
             })
         })
-            .then(res => res.ok ? res.json() : Promise.reject)
+            .then(this._checkResponse)
     }
 }
 

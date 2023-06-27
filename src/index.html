@@ -111,11 +111,11 @@
          <h2 class="popup__heading">Обновить аватар</h2>
          <button class="popup__icon popup__close-card" type="button"><img src="<%=require('./images/CloseIcon.png')%>"
                class="popup__img" alt="кнопка закрыть"></button>
-         <form class="edit-form edit-form_card_submit" name="add-form" method="post" novalidate>
+         <form class="edit-form edit-form_avatar_submit" name="add-form" method="post" novalidate>
             <fieldset class='edit-form__container'>
                <input type="url" class="edit-form__item" id="avatar" name="avatar" placeholder="Ссылка на картинку"
                   required>
-               <span class="edit-form__item-error image-link-error"></span>
+               <span class="edit-form__item-error avatar-error"></span>
             </fieldset>
             <button type="submit" class="popup__button">Сохранить</button>
          </form>
